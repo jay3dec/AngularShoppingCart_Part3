@@ -1,0 +1,32 @@
+ <div class="container">
+	
+      <div class="row">
+        <div class="col-xs-7 col-md-8 col-sm-8 col-lg-8">
+           <div class="panel panel-primary" ng-repeat="q in shopData">
+              <div class="panel-heading">
+                    <h3 class="panel-title">{{q.item}}</h3>
+                </div>
+              <check-list name="q.id" selected="q.selected" option="q.prices"></check-list>
+            </div>
+	</div>
+
+        <div ng-class="{'affix': scroll > 50, 'affix-top': scroll <= 50}" class="col-xs-5 col-md-4 col-sm-4 col-lg-4" data-spy="affix" data-offset-top="20">
+            <div class="panel panel-primary">
+              <div id="divTotal" class="panel-heading">
+                  <h3 class="panel-title">Total</h3>
+              </div>
+              <div class="panel-body">
+                  <h2>Rs. {{total()}}</h2>
+              </div>
+          </div>
+          <div class="text-center">
+              <a href="#/checkout" class="btn btn-danger">Checkout <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>
+              
+          </div>
+        </div>
+      </div><!-- /.row  -->
+
+
+    </div><!-- /.container -->
+
+<get-scroll scroll="scroll"></get-scroll>
